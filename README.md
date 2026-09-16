@@ -1,98 +1,563 @@
-# Smart Course Management System
+# EduFlow – Smart Course Management System
 
-## About the Project
+## 📌 About the Project
 
-Smart Course Management System is a backend project for managing courses using Node.js, Express.js, MongoDB, and Mongoose.
+EduFlow is a full-stack Smart Course Management System designed to provide an organized platform for managing and learning from online courses.
 
-## Entity Chosen
+The system allows students to browse and enroll in courses, instructors to manage their courses, and administrators to manage users and system resources.
 
-The chosen entity is **Course** because courses are a main part of the Smart Course Management System.
+The project consists of:
 
-The Course module allows users to create, view, update, and delete courses.
+- Angular frontend
+- Node.js and Express.js backend
+- MongoDB database
+- JWT authentication
+- Role-based authorization
+- Course management
+- User management
+- Course enrollment
+- Image file upload
 
-## Technologies Used
+---
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* Multer
-* Postman
+## 🎯 Project Objectives
 
-## Features Implemented
+The main objectives of EduFlow are:
 
-* Course CRUD operations
-* User authentication and authorization
-* Role-based access control
-* Course ownership authorization
-* File upload using Multer
-* Course image upload
-* Saving the uploaded image path with the course data in MongoDB
+- Build a complete full-stack web application.
+- Apply Angular concepts in a real-world project.
+- Build RESTful APIs using Node.js and Express.js.
+- Store and manage data using MongoDB and Mongoose.
+- Implement authentication using JWT.
+- Implement role-based authorization.
+- Practice CRUD operations.
+- Connect Angular frontend with a backend API.
+- Implement secure course and user management.
 
-## Course Routes
+---
 
-| Method | Endpoint              | Description         |
-| ------ | --------------------- | ------------------- |
-| POST   | `/api/v1/courses`     | Create a new course |
-| GET    | `/api/v1/courses`     | Get all courses     |
-| GET    | `/api/v1/courses/:id` | Get a course by ID  |
-| PATCH  | `/api/v1/courses/:id` | Update a course     |
-| DELETE | `/api/v1/courses/:id` | Delete a course     |
+# 👥 User Roles
 
-## File Upload
+The system contains three main roles:
 
-The Course module supports image upload using **Multer**.
+### 👨‍🎓 Student
 
-Uploaded images are stored in the `uploads` folder, and the image path is saved with the course data in MongoDB.
+Students can:
 
-The image is uploaded when creating a course using the `image` field in a `multipart/form-data` request.
+- Register an account.
+- Login to the system.
+- View available courses.
+- View course details.
+- Enroll in courses.
+- View their enrolled courses.
+- Track their learning progress.
+- View and manage their profile.
 
-## How to Run Locally
+Students cannot:
 
-### 1. Install dependencies
+- Add courses.
+- Edit or delete courses.
+- Manage users.
+
+---
+
+### 👨‍🏫 Instructor
+
+Instructors can:
+
+- Login to the system.
+- View courses.
+- Add courses.
+- Edit their own courses.
+- Delete their own courses.
+- Upload course images.
+- Manage their course content.
+
+---
+
+### 👨‍💼 Admin
+
+Administrators can:
+
+- Login to the system.
+- View all courses.
+- Add courses.
+- Edit courses.
+- Delete courses.
+- View all users.
+- Add users.
+- Edit users.
+- Delete users.
+- Manage different user roles.
+
+---
+
+# ⭐ Main Features
+
+## Authentication
+
+- User registration
+- User login
+- Password hashing using bcrypt
+- JWT authentication
+- Protected routes
+- Authentication interceptor
+- Automatic token handling
+
+---
+
+## Authorization
+
+The system uses role-based authorization.
+
+Available roles:
+
+- Student
+- Instructor
+- Admin
+
+Different permissions are applied depending on the logged-in user's role.
+
+---
+
+## Course Management
+
+The system supports complete Course CRUD operations:
+
+- Create Course
+- Read Courses
+- Read Course by ID
+- Update Course
+- Delete Course
+
+Course information includes:
+
+- Title
+- Description
+- Instructor
+- Category
+- Level
+- Price
+- Duration
+- Image
+
+---
+
+## User Management
+
+Administrators can manage users through:
+
+- View Users
+- Add User
+- Edit User
+- Delete User
+
+User roles can be:
+
+- Student
+- Instructor
+- Admin
+
+---
+
+## Course Enrollment
+
+Students can:
+
+- Enroll in courses.
+- View their enrolled courses.
+- Continue learning from their enrolled courses.
+
+---
+
+# 📚 Course Categories
+
+The system supports different course categories such as:
+
+- Backend
+- Frontend
+- Database
+
+Course levels include:
+
+- Beginner
+- Intermediate
+- Advanced
+
+---
+
+# 🖼️ File Upload
+
+Course images can be uploaded when creating courses.
+
+### Upload Permissions
+
+Only:
+
+- Instructor
+- Admin
+
+can create courses and upload course images.
+
+Students cannot upload course images.
+
+### Upload Technology
+
+The backend uses:
+
+- Multer
+
+to handle course image uploads.
+
+### File Requirements
+
+- Allowed file types: JPG, JPEG, PNG, JFIF
+- Maximum file size: 5 MB
+- Uploaded images are stored in the backend `uploads` folder.
+
+---
+
+# 🛠️ Technologies Used
+
+## Frontend
+
+- Angular
+- TypeScript
+- HTML
+- CSS
+- RxJS
+- Angular Signals
+- Angular Forms
+- Angular Router
+- HttpClient
+
+## Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT
+- bcrypt
+- Multer
+
+## Development Tools
+
+- Visual Studio Code
+- Postman
+- Git
+- GitHub
+- Figma
+
+---
+
+# 🅰️ Angular Features Used
+
+The frontend applies several Angular concepts:
+
+### Components
+
+The application is divided into reusable standalone components.
+
+### Data Binding
+
+The project uses:
+
+- Interpolation
+- Property Binding
+- Event Binding
+- Two-way Binding
+
+### Angular Control Flow
+
+The project uses modern Angular control flow:
+
+```text
+@if
+@for
+```
+
+### Signals
+
+Angular Signals are used for reactive UI state such as dashboard statistics.
+
+### Forms
+
+The project uses:
+
+- Template-driven Forms
+- Reactive Forms
+- Form validation
+- Custom validation
+
+### Services
+
+Angular services are used to communicate with the backend API.
+
+Examples:
+
+- AuthService
+- CourseService
+- UserService
+- EnrollmentService
+
+### HttpClient
+
+Angular HttpClient is used for communication with the REST API.
+
+### Interceptors
+
+The project uses:
+
+- Authentication Interceptor
+- Error Interceptor
+
+### Routing
+
+Angular Router is used for navigation between application pages.
+
+The project includes:
+
+- Route parameters
+- RouterLink
+- Router navigation
+- Auth Guard
+- Admin Guard
+
+---
+
+# 🔐 Authentication Flow
+
+The authentication process works as follows:
+
+1. User registers or logs in.
+2. Backend validates the credentials.
+3. Passwords are stored using bcrypt hashing.
+4. Backend generates a JWT token after successful login.
+5. Angular stores the token.
+6. The Auth Interceptor attaches the token to protected requests.
+7. Backend verifies the token.
+8. User permissions are checked according to their role.
+
+---
+
+# 🔒 Security
+
+The project applies several security practices:
+
+- Password hashing using bcrypt.
+- JWT authentication.
+- Protected API routes.
+- Role-based authorization.
+- Admin-only user management.
+- Course ownership authorization.
+- Environment variables for sensitive configuration.
+- `.env` excluded from GitHub using `.gitignore`.
+
+---
+
+# 🗂️ Project Structure
+
+```text
+EduFlow
+│
+├── Backend
+│   ├── config
+│   ├── controllers
+│   ├── middlewares
+│   ├── models
+│   ├── routes
+│   ├── screenshots
+│   ├── uploads
+│   ├── .env
+│   ├── app.js
+│   ├── package.json
+│   └── ...
+│
+├── frontend
+│   ├── public
+│   ├── src
+│   │   └── app
+│   │       ├── dashboard
+│   │       ├── courses
+│   │       ├── course-details
+│   │       ├── add-course
+│   │       ├── edit-course
+│   │       ├── my-courses
+│   │       ├── users
+│   │       ├── add-user
+│   │       ├── edit-user
+│   │       ├── login
+│   │       ├── register
+│   │       ├── settings
+│   │       ├── learning
+│   │       ├── services
+│   │       ├── guards
+│   │       └── interceptors
+│   │
+│   ├── angular.json
+│   ├── package.json
+│   └── tsconfig.json
+│
+└── README.md
+```
+
+---
+
+# 🔗 API Endpoints
+
+## Authentication
+
+```text
+POST /api/v1/users/register
+POST /api/v1/users/login
+```
+
+## Courses
+
+```text
+GET    /api/v1/courses
+GET    /api/v1/courses/:id
+POST   /api/v1/courses
+PATCH  /api/v1/courses/:id
+DELETE /api/v1/courses/:id
+```
+
+## Users
+
+```text
+GET    /api/v1/users
+GET    /api/v1/users/:id
+POST   /api/v1/users
+PATCH  /api/v1/users/:id
+DELETE /api/v1/users/:id
+```
+
+## Enrollment
+
+```text
+POST /api/v1/enrollments
+GET  /api/v1/enrollments/my-courses
+```
+
+---
+
+# 🧪 Testing
+
+The backend APIs were tested using Postman.
+
+Tested operations include:
+
+- Register
+- Login
+- Course CRUD
+- User CRUD
+- Course image upload
+- Authentication
+- Role authorization
+- Course ownership authorization
+- Enrollment
+
+---
+
+# 🎨 UI Design
+
+The user interface was designed using Figma.
+
+### Figma Design
+
+[View EduFlow UI Design](https://www.figma.com/make/W4UcIERHkgnyd90xQY0rmM/Smart-Course-Management-UI?code-node-id=0-6&p=f&t=iXMn9dCJiG4DM0ul-0&fullscreen=1)
+
+---
+
+# 🚀 How to Run the Project
+
+## Backend
+
+Open the Backend folder:
+
+```bash
+cd Backend
+```
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### 2. Configure environment variables
-
-Create a `.env` file and add the required MongoDB connection string and other environment variables.
-
-### 3. Start the server
+Start the server:
 
 ```bash
 npm start
 ```
 
-The server runs on:
+The backend runs on:
 
-`http://localhost:5000`
+```text
+http://localhost:5000
+```
 
-## API Usage Examples
+---
 
-### Create a Course
+## Frontend
 
-Send a POST request to `/api/v1/courses` with the course information and an image using `multipart/form-data`.
+Open the frontend folder:
 
-### Get All Courses
+```bash
+cd frontend
+```
 
-Send a GET request to `/api/v1/courses` to retrieve all available courses.
+Install dependencies:
 
-### Get a Course by ID
+```bash
+npm install
+```
 
-Send a GET request to `/api/v1/courses/:id` to retrieve a specific course.
+Start Angular:
 
-### Update a Course
+```bash
+ng serve
+```
 
-Send a PATCH request to `/api/v1/courses/:id` with the information that needs to be updated.
+The frontend runs on:
 
-### Delete a Course
+```text
+http://localhost:4200
+```
 
-Send a DELETE request to `/api/v1/courses/:id` to delete a specific course.
+---
 
-## Postman Testing
+# 🎓 Learning Objectives
 
-The Course CRUD operations and file upload functionality were tested using Postman.
+Through this project, the following concepts were practiced:
 
-Screenshots of the requests and responses are available in the `screenshots` folder.
+- Full-stack application development
+- Angular development
+- TypeScript
+- REST APIs
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- Authentication
+- Authorization
+- JWT
+- CRUD operations
+- File uploads
+- Angular Services
+- Angular Forms
+- Angular Signals
+- Angular Routing
+- Route Guards
+- HTTP Interceptors
+- API integration
+- Git and GitHub
+
+---
+
+# 👩‍💻 Project
+
+**EduFlow – Smart Course Management System**
+
+A full-stack educational platform developed using Angular, Node.js, Express.js, and MongoDB.
